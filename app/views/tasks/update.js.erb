@@ -1,4 +1,4 @@
-var status = <%=@task.status %>
+var status = <%= !!@task.status %>
 
 if (status == 'true')
     $('#task_<%=@task.id %>').addClass('done');
