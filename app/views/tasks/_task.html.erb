@@ -1,0 +1,13 @@
+<!-- item row -->
+<div class="item_row <%=task.status ? 'done' : '' %>" id="<%="task_#{task.id}" %>">
+  <label for="item<%=task.id %>">
+    <div class="item_row__inp">
+      <%= render('tasks/checkbox', task: task) %>
+    </div>
+    <div class="item_row__text"><%=task.name %></div>
+    <div class="item_row__icons">
+      <%= link_to 'Edit', edit_task_path(task), remote: true, class: "link_edit" %>
+      <%= link_to 'Destroy', task, remote: true, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+  </label>
+</div><!-- /. item row -->

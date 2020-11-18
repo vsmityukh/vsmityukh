@@ -1,0 +1,10 @@
+<%#= form_with model: task do |form| %>
+  <%#= form.text_field :name %>
+  <%#= form.submit %>
+<%# end %>
+
+<%= form_with model: @task, html:{class: 'rename_task'}, remote: true do |form| %>
+  <%= form.hidden_field :project_id, value: @task.project.id %>
+  <%= form.text_field :name, value: @task.name, class: "task_name"%>
+  <%= form.submit 'Rename Task'%>
+<% end %>

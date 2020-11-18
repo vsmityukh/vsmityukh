@@ -1,0 +1,4 @@
+<%= form_with(model: project, html:{class: "add_project"}) do |form| %>
+  <%= form.text_field :name, placeholder: "Enter project name"%>
+  <%= form.submit 'Add Project'%>
+<% end %>

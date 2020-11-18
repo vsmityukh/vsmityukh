@@ -1,0 +1,4 @@
+var wrapper = document.querySelector("#list<%=@task.project.id %>");
+wrapper.insertAdjacentHTML("beforeend", "<%= j render(@task) %>");
+
+document.querySelector("#project_<%=@task.project.id %> form .task_name").value='';

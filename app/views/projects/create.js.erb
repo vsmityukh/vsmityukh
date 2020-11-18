@@ -1,0 +1,9 @@
+var projects = document.querySelector("#projects");
+projects.insertAdjacentHTML("beforeend", "<%= j render(@project) %>");
+
+document.querySelector("#project_name").value = '';
+document.querySelector("form.add_project").classList.remove("open");
+
+var btn = document.querySelector(".btn_addtem");
+btn.style.marginRight = 'auto';
+btn.style.display = 'block';

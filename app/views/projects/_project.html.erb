@@ -1,0 +1,27 @@
+<div class="todo_item" id="<%="project_#{project.id}" %>">
+
+  <div class="todo_item__head">
+    <div class="head_titl"><%= project.name %></div>
+    <div class="head_icons">
+      <%= link_to 'Edit',  edit_project_path(project), remote: true %>
+      <%= link_to 'Destroy', project, remote: true, method: :delete,  data: { confirm: 'Are you sure?' } %>
+    </div>
+  </div>
+
+  <div class="todo_item__add">
+    <div class="add_icon"></div>
+    <%= form_with model: Task.new, html:{class: 'add_form'},
+                  remote: true do |form| %>
+      <%= form.hidden_field :project_id, value: project.id %>
+      <%= form.text_field :name, placeholder: "Add new task name", class: "task_name"%>
+      <%= form.submit 'Add Task'%>
+    <% end %>
+  </div>
+
+  <div class="todo_item__list" id="list<%=project.id %>">
+    <% project.task.each do |task| %>
+      <%= render('tasks/task', task: task) %>
+    <% end %>
+  </div>
+
+</div>

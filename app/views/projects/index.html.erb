@@ -1,0 +1,16 @@
+
+
+<!-- TODO list -->
+<div class="todo_wrap" id="projects">
+  <%#= render @projects %>
+  <% @projects.each do |project| %>
+    <%= render('projects/project', project: project) %>
+    <!-- todo item -->
+  <% end %>
+
+</div><!-- /. TODO list -->
+
+<div class="add_wrap">
+  <a href="#" class="btn_addtem">Add Project</a>
+  <%= render 'form', project: Project.new %>
+</div>

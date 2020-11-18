@@ -1,0 +1,10 @@
+var status = <%=@task.status %>;
+
+if (status == 'true')
+    $('#task_<%=@task.id %>').addClass('done');
+else
+    $('#task_<%=@task.id %>').removeClass('done');
+
+$('#task_<%=@task.id %> .item_row__text').html('<%=@task.name %>');
+$('#task_<%=@task.id %> .item_row__inp')
+    .html('<%=j render('tasks/checkbox', task: @task) %>');
