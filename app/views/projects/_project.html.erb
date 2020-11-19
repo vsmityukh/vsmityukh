@@ -18,8 +18,11 @@
     <% end %>
   </div>
 
-  <div class="todo_item__list" id="list<%=project.id %>">
-    <% project.task.each do |task| %>
+  <div class="todo_item__list" id="list<%=project.id %>"
+       data-controller="drag"
+       data-drag-url="/tasks/:id/move"
+  >
+    <% project.tasks.each do |task| %>
       <%= render('tasks/task', task: task) %>
     <% end %>
   </div>

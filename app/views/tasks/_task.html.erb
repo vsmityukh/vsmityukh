@@ -1,6 +1,8 @@
 <!-- item row -->
-<div class="item_row <%=task.status ? 'done' : '' %>" id="<%="task_#{task.id}" %>">
-  <label for="item<%=task.id %>">
+<div class="card card-body item_row <%= task.status ? 'done' : '' %>"
+     id="<%="task_#{task.id}" %>"
+     data-id="<%= task.id %>">
+  <label for="item<%= task.id %>">
     <div class="item_row__inp">
       <%= render('tasks/checkbox', task: task) %>
     </div>
