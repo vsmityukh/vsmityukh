@@ -6,5 +6,6 @@
 <%= form_with model: @task, html:{class: 'rename_task'}, remote: true do |form| %>
   <%= form.hidden_field :project_id, value: @task.project.id %>
   <%= form.text_field :name, value: @task.name, class: "task_name"%>
-  <%= form.submit 'Rename Task'%>
+  <%= form.date_field :deadline, value: @task.deadline, class: "task_name"%>
+  <%= form.submit 'Edit Task'%>
 <% end %>

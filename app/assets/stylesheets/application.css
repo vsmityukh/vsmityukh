@@ -165,10 +165,17 @@ small{
 .todo_item__add .add_form{
     width: calc(100% - 35px);
     margin-left: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .todo_item__add input[type=text]{
-    width: calc(100% - 95px);
+    /*width: calc(100% - 95px);*/
+}
+
+.sortable_chosen{
+    cursor: grab
 }
 
 
@@ -189,6 +196,9 @@ small{
 
 .item_row{
     cursor: pointer;
+}
+.item_row:hover{
+    cursor: grab
 }
 
 .item_row.done {

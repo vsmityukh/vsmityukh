@@ -9,12 +9,18 @@
   </div>
 
   <div class="todo_item__add">
-    <div class="add_icon"></div>
     <%= form_with model: Task.new, html:{class: 'add_form'},
                   remote: true do |form| %>
       <%= form.hidden_field :project_id, value: project.id %>
-      <%= form.text_field :name, placeholder: "Add new task name", class: "task_name"%>
-      <%= form.submit 'Add Task'%>
+      <div class="form_field">
+        <%= form.text_field :name, placeholder: "Add new task name", class: "task_name"%>
+      </div>
+      <div class="form_field">
+        <%= form.date_field :deadline, placeholder: "Add deadline", class: "task_name"%>
+      </div>
+      <div class="form_field">
+        <%= form.submit 'Add Task'%>
+      </div>
     <% end %>
   </div>
 
