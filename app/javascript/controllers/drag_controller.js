@@ -17,6 +17,7 @@ export default class extends Controller {
     })
   }
 
+
   end(event) {
     let data = new FormData()
     data.append('position', event.newIndex + 1 )
